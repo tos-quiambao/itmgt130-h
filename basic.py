@@ -33,7 +33,16 @@ def savings(gross_pay, tax_rate, expenses):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    gross_pay =int(input("What is the gross pay amount?"))
+    tax_rate = float(input("What is the tax rate?"))
+    after_tax_pay = gross_pay-(gross_pay*tax_rate)
+    print("The employee's after-tax pay is Php",after_tax_pay)
+
+    expenses = int(input("How much is the employee's total expenses?"))
+    take_home_pay = int(after_tax_pay-expenses)
+    print("After taxes and expenses, the employee's total take home pay is Php",take_home_pay)
+
+"--------------------------------------------------------------------------------------------------------------------------------------"
 
 def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''Material Waste.
@@ -68,7 +77,17 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+num_jobs =int(input("How many jobs will be run?"))
+job_consumption =int(input("How much material is consumed per job?"))
+material_units =str(input("What is the unit of the material used?"))
+material_used =num_jobs*job_consumption
+print("The total material consumed is",str(material_used)+material_units)
+
+total_material =int(input("How much is the total material available?"))
+material_waste =total_material-material_used
+print("The total material wasted after",num_jobs,"jobs is",str(material_waste)+material_units)
+
+"--------------------------------------------------------------------------------------------------------------------------------------"
 
 def interest(principal, rate, periods):
     '''Interest.
@@ -98,4 +117,13 @@ def interest(principal, rate, periods):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+
+principal = int(input("What is the principal amount invested?"))
+rate = input("What is the interest rate per period?")
+rate_percent = float(int(rate)/100)
+print("The interest rate is",rate_percent)
+period = int(input("For how many periods is the money invested?"))
+interest = int(principal*rate_percent*period)
+final_investment = principal+interest
+
+print("With a simple interest of Php "+str(interest)+", the final investment value is set to be Php",final_investment)
