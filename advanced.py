@@ -139,87 +139,24 @@ def tic_tac_toe(board):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def tic_tac_toe(board):
-
+def tic_tac_toe(board):
   board_size = len(board)
-    
-  for i in range(board_size):
-    if all(board[i][j] == board[i][0] for j in range(board_size)) and board[i][0] != "":
-      return board[i][0]
 
-    if all(board[j][i] == board[0][i] for j in range(board_size)) and board[0][i] != "":
+  for i in range(board_size):
+    if all(board[i][j] == board[i][0] and board[i][0] != "" for j in range(board_size)):
+      return board[i][0]
+    if all(board[j][i] == board[0][i] and board[0][i] != "" for j in range(board_size)):
       return board[0][i]
 
-  if all(board[i][i] == board[0][0] for i in range(board_size)) and board[0][0] != "":
+  if all(board[i][i] == board[0][0] and board[0][0] != "" for i in range(board_size)):
     return board[0][0]
-
-  if all(board[i][board_size - 1 - i] == board[0][board_size - 1] for i in range(board_size)) and board[0][board_size - 1] != "":
+  if all(board[i][board_size - 1 - i] == board[0][board_size - 1] and board[0][board_size - 1] != "" for i in range(board_size)):
     return board[0][board_size - 1]
 
   if all(symbol != "" for row in board for symbol in row):
     return "NO WINNER"
 
   return "NO WINNER"
-
-board1 = [
-  ['X','X','O'],
-  ['O','X','O'],
-  ['O','','X'],
-]
-board2 = [
-  ['X','X','O'],
-  ['O','X','O'],
-  ['','O','X'],
-]
-board3 = [
-  ['O','X','O'],
-  ['','O','X'],
-  ['X','X','O'],
-]
-board4 = [
-  ['X','X','X'],
-  ['O','X','O'],
-  ['O','','O'],
-]
-board5 = [
-  ['X','X','O'],
-  ['O','X','O'],
-  ['X','','O'],
-]
-board6 = [
-  ['X','X','O'],
-  ['O','X','O'],
-  ['X','',''],
-]
-board7 = [
-  ['X','X','O',''],
-  ['O','X','O','O'],
-  ['X','','','O'],
-  ['O','X','','']
-]
-
-boards = {
-  1: board1,
-  2: board2,
-  3: board3,
-  4: board4,
-  5: board5,
-  6: board6,
-  7: board7
-}
-
-board_num = int(input("Pick which board you want to evaluate (1-7): "))
-
-if 1 <= board_num <= 7:
-  selected_board = boards[board_num]
-  result = tic_tac_toe(selected_board)
-
-  if result == "NO WINNER":
-    print(f"There is no winner for board {board_num}.")
-  else:
-    print(f"The winner of board {board_num} is {result}.")
-else:
-  print("Invalid board number. Please choose between 1 and 7.")
 
 "--------------------------------------------------------------------------------------------------------------------------------------"
 
