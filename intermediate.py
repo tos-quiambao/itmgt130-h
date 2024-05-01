@@ -37,8 +37,8 @@ def shift_letter(letter, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def shift_letter(letter, shift):
-    letter_list = ("abcdefghijklmnopqrstuvwxyz")
+def shift_letter(letter, shift):
+    letter_list = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     if letter == " ":
         return " "
     else:
@@ -69,19 +69,20 @@ def caesar_cipher(message, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def shift_message(message, shift):
-    letter_list = ("abcdefghijklmnopqrstuvwxyz")
+def caesar_cipher(message, shift):
+    letter_list = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     shifted_message = ""
     for letter in message:
         if letter == " ":
             shifted_message += " "
         else:
-            letter = letter.lower()
+            '''letter = letter.lower()'''
             index = letter_list.index(letter)
             shifted_index = (index + shift) % 26
             shifted_letter = letter_list[shifted_index]
             shifted_message += shifted_letter
-    return (shifted_message)
+            
+    return shifted_message
 
 "--------------------------------------------------------------------------------------------------------------------------------------"
 
@@ -113,7 +114,7 @@ def shift_by_letter(letter, letter_shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def shift_letter(letter, letter_shift):
+def shift_by_letter(letter, letter_shift):
     letter_list = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     if letter == " ":
         return " "
@@ -122,7 +123,7 @@ def shift_by_letter(letter, letter_shift):
         letter_shifter = ord(letter_shift) - 65
         shifted_index = (index + letter_shifter) % 26
         shifted_letter = letter_list[shifted_index]
-        print(shifted_letter)
+        return shifted_letter
 
 "--------------------------------------------------------------------------------------------------------------------------------------"
 
